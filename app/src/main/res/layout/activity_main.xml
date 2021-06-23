@@ -8,138 +8,300 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:text="0"
-        android:textSize="90sp"
-        android:padding="10dp"
-        android:textAlignment="textEnd"
-        android:gravity="bottom"
-        tools:ignore="RtlCompat"
-         />
+        android:orientation="vertical"
+        android:weightSum="2">
+        <HorizontalScrollView
+            android:id="@+id/hsvFormula"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="125dp"
+            android:layout_gravity="right"
+            android:scrollX="0dp">
+            <TextView
+                android:id="@+id/tvDisplayFormula"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:gravity="right"
+                android:textSize="90sp"
+                android:padding="10dp"
+                tools:ignore="RtlCompat"
+                android:textColor="#2FFF01"
+                android:fontFamily="@font/calculator"
+                android:shadowColor="@color/black"
+                />
+        </HorizontalScrollView>
+        <HorizontalScrollView
+            android:id="@+id/hsvResult"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="125dp"
+            android:layout_gravity="right"
+            >
+            <TextView
+                android:id="@+id/tvDisplayResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="90sp"
+                android:padding="10dp"
+                android:textAlignment="textEnd"
+                android:gravity="bottom"
+                tools:ignore="RtlCompat"
+                android:textColor="#2FFF01"
+                android:fontFamily="@font/calculator"
+                android:shadowColor="@color/black"
+                />
+        </HorizontalScrollView>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="5"
         android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:layout_gravity="center_horizontal"
         >
         <LinearLayout
+            android:layout_marginTop="15dp"
             android:layout_weight="1"
-            android:weightSum="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            >
+
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/black"/>
-            <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textColor="@color/white"
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="7"
+                android:textColor="@color/button_text"
                 android:textSize="25dp"
-
-                android:text="8"/>
+                />
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">9</Button>
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="8"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                />
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="9"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                />
+            <Button
+                android:id="@+id/btnDivition"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:textColor="@color/button_text"
+                android:layout_margin="5dp"
+                android:textSize="25dp"
+                android:text="/"
+                android:textStyle="bold"
+                android:onClick="calculatorInput"
+                android:elevation="10dp"
+                style="@style/AppTheme.RoundedCornerMaterialButtonSymbol"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_weight="1"
-            android:weightSum="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            >
+
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/black">a</Button>
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="4"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                />
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="5"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                />
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="6"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                />
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                android:id="@+id/btnMultiply"
+                style="@style/AppTheme.RoundedCornerMaterialButtonSymbol"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="X"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_weight="1"
-            android:weightSum="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            >
+
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/black">a</Button>
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="1"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                />
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="2"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                />
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                style="@style/AppTheme.RoundedCornerMaterialButton"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="3"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                />
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                android:id="@+id/btnSubstract"
+                style="@style/AppTheme.RoundedCornerMaterialButtonSymbol"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_margin="5dp"
+                android:elevation="10dp"
+                android:onClick="calculatorInput"
+                android:text="-"
+                android:textColor="@color/button_text"
+                android:textSize="25dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_weight="1"
-            android:weightSum="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            >
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/black">a</Button>
+                android:layout_width="170sp"
+                android:layout_height="80sp"
+                android:textColor="@color/button_text"
+                android:layout_margin="5dp"
+                android:textSize="25dp"
+                android:text="0"
+                android:onClick="calculatorInput"
+                android:elevation="10dp"
+                style="@style/AppTheme.RoundedCornerMaterialButton"/>
+
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                android:id="@+id/btnCLR"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:textColor="@color/button_text"
+                android:layout_margin="5dp"
+                android:textSize="25dp"
+                android:text="CLR"
+                android:onClick="calculatorInput"
+                android:elevation="10dp"
+                style="@style/AppTheme.RoundedCornerMaterialButton"/>
             <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
-            <Button
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">a</Button>
+                android:id="@+id/btnAdd"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:textColor="@color/button_text"
+                android:layout_margin="5dp"
+                android:textSize="25dp"
+                android:text="+"
+                android:textStyle="bold"
+                android:onClick="calculatorInput"
+                android:elevation="10dp"
+                style="@style/AppTheme.RoundedCornerMaterialButtonSymbol"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_weight="1"
-            android:weightSum="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            <Button
-                android:layout_weight="4"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/black">a</Button>
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            >
 
+            <Button
+                android:id="@+id/btnEqual"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="80sp"
+                android:textColor="@color/button_text"
+                android:layout_margin="5dp"
+                android:textSize="25dp"
+                android:text="="
+                android:textStyle="bold"
+                android:onClick="calculatorInput"
+                android:elevation="10dp"
+                style="@style/AppTheme.RoundedCornerMaterialButton"/>
         </LinearLayout>
 
 
